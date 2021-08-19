@@ -53,7 +53,7 @@ scrape_configs:
         port: 4040
         filters:
           - name: "tag:ServiceName"
-            values: ["SERVICE_NAME"]
+            values: ["${SERVICE_NAME}"]
     relabel_configs:
       - source_labels: [__meta_ec2_tag_Name]
         target_label: name
