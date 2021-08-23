@@ -73,7 +73,7 @@ _EOD_
 
 if hash systemctl; then
 # systemd
-cat > /usr/lib/systemd/system/prometheus.service <<'_EOD_'
+cat > /usr/lib/systemd/system/prometheus-relay-agent.service <<'_EOD_'
 [Unit]
 Description=Prometheus
 Documentation=https://prometheus.io/docs/introduction/overview/
