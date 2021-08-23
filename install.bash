@@ -15,7 +15,7 @@ if [ -z "$SERVICE_NAME" ]; then
   exit 2
 fi
 
-service prometheus-relay-agent stop || true
+service prometheus stop || true
 curl -L https://github.com/prometheus/prometheus/releases/download/v${PROM_VERSION}/prometheus-${PROM_VERSION}.linux-amd64.tar.gz -o /tmp/prometheus-${PROM_VERSION}.linux-amd64.tar.gz
 cd /tmp
 tar zxvf prometheus-${PROM_VERSION}.linux-amd64.tar.gz
