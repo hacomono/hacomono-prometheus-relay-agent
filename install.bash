@@ -91,8 +91,8 @@ WantedBy=multi-user.target
 _EOD_
 
 systemctl daemon-reload
-systemctl enable prometheus.service
-systemctl start prometheus.service
+systemctl enable prometheus-relay-agent.service
+systemctl start prometheus-relay-agent.service
 
 else # hash systemctl
 # SysVinit
