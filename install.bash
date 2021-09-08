@@ -82,7 +82,7 @@ After=network-online.target
 [Service]
 Type=simple
 ExecStart=/opt/prometheus/prometheus \
-  --config.file=/opt/prometheus/prometheus.yml
+  --config.file=/opt/prometheus/prometheus.yml --storage.tsdb.retention.time=5m
 Restart=always
 ExecReload=/bin/kill -HUP $MAINPID
 
@@ -110,7 +110,7 @@ cat > /etc/init.d/prometheus-relay-agent <<'_EOD_'
 
 
 RETVAL=0
-ARGS="--config.file=/opt/prometheus/prometheus.yml"
+ARGS="--config.file=/opt/prometheus/prometheus.yml --storage.tsdb.retention.time=5m"
 PROG="prometheus-relay-agent"
 DAEMON="/opt/prometheus/prometheus"
 PID_FILE=/var/run/${PROG}.pid
